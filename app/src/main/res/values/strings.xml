@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Receptej Tuj</string>
+    <string name="ingredientsLabel">Список ингридиентов</string>
+    <string name="startSearch">Start the search</string>
+</resources>

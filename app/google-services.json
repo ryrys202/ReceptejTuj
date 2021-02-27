@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "950650577180",
+    "firebase_url": "https://receptejtuj.firebaseio.com",
+    "project_id": "receptejtuj",
+    "storage_bucket": "receptejtuj.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:950650577180:android:32831db7a1e401efed9ad9",
+        "android_client_info": {
+          "package_name": "io.github.ryrys202.receptejtuj"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "950650577180-kgcqho7l4j7baa7cgmmsu9rhjorqfm23.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.github.ryrys202.receptejtuj",
+            "certificate_hash": "5d283dfe5272b6884f2bbdffc54f7b3532d7d886"
+          }
+        },
+        {
+          "client_id": "950650577180-390fnaklt74iaqnkccemd59ge8hm5645.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZz79UD48NsiOzM39GLKaBFz72pUYFpDE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "950650577180-390fnaklt74iaqnkccemd59ge8hm5645.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
