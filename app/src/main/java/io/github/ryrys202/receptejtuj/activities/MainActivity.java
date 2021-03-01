@@ -25,10 +25,7 @@ import java.util.Objects;
 import io.github.ryrys202.receptejtuj.R;
 
 public class MainActivity extends AppCompatActivity {
-    public static final String QUERY_RESULT = "io.github.ryrys202.receptejtuj.QUERY_RESULT";
-
-    public FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
-    public ArrayList<Recipe> listOfRecipes = new ArrayList<>();
+    public String[] listOfIngredients;
     private EditText inputTextField;
 
     @Override
@@ -40,39 +37,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void onStartClick(View v) {
         String ingredientsList = inputTextField.getText().toString();
-
-        // Строка -> Нормализованный лист с алфавитным порядком
-        List<String> listOfIngredients = Arrays.asList(ingredientsList.split(","));
-
-        /*for (int i = 0; i < listOfIngredients.size(); i++) {
-            String trimmedIngredient = listOfIngredients.get(i);
-            listOfIngredients.set(i, trimmedIngredient);
-        }*/
-
-        Collections.sort(listOfIngredients);
-
-        // Запрос к Firestore
-        firebaseFirestore.collection("recipes")
-                .whereEqualTo("ingredients", listOfIngredients)
-                .get()
-                .addOnCompleteListener(task -> {
-                    // List<Recipe> listOfRecipe = task.getResult().toObjects(Recipe.class);
-                    if (task.getResult().isEmpty()) {
-                        Toast.makeText(this, "Рецепты не найдены", Toast.LENGTH_SHORT ).show();
-                    } else {
-                        for (QueryDocumentSnapshot document : (task.getResult())) {
-                            Recipe currentRecipe = document.toObject(Recipe.class);
-                            listOfRecipes.add(currentRecipe);
-                            Log.d("tag", "onStartClick: " + currentRecipe.getDocumentId());
-                        }
-                        openResultActivity();
-                    }
-                });
+        this.listOfIngredients = ingredientsList.split(",");
+        openResultActivity();
     }
 
     public void openResultActivity() {
         Intent intent = new Intent(this, ResultActivity.class);
-        intent.putParcelableArrayListExtra("recipeList", listOfRecipes);
+        intent.putExtra("ingredientsList", listOfIngredients);
         startActivity(intent);
     }
 

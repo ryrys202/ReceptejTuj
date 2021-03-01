@@ -2,4 +2,10 @@
     <string name="app_name">Receptej Tuj</string>
     <string name="ingredientsLabel">Список ингридиентов</string>
     <string name="startSearch">Start the search</string>
+    <string name="content_description_media">Description</string>
+    <string name="title">Name</string>
+    <string name="secondary_text">Another test</string>
+    <string name="supporting_text">This recepie is nothing</string>
+    <string name="action_1">Подробнее</string>
+    <string name="action_2">action2</string>
 </resources>
